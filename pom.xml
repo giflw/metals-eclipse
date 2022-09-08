@@ -19,10 +19,10 @@
 	</properties>
 
 	<modules>
-		<module>../target-platform</module>
-		<module>../lsp-scala-plugin</module>
-		<module>../lsp-scala-feature</module>
-		<module>../repository</module>
+		<module>target-platform</module>
+		<module>lsp-scala-plugin</module>
+		<module>lsp-scala-feature</module>
+		<module>repository</module>
 	</modules>
 
 	<dependencies>
