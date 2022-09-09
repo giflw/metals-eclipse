@@ -7,7 +7,7 @@
         <version>0.3.3-SNAPSHOT</version>
     </parent>
 
-    <artifactId>metals-eclipse-feature</artifactId>
+    <artifactId>lsp.scala.feature</artifactId>
     <packaging>eclipse-feature</packaging>
 
     <name>Eclipse Scala LSP Feature</name>

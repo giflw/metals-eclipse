@@ -9,9 +9,15 @@
     <url>https://github.com/scalameta/metals-eclipse</url>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+
         <tycho.version>2.7.5</tycho.version>
         <tycho.extras.version>${tycho.version}</tycho.extras.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <!-- FIXME -->
         <tycho.scmUrl>scm:git:https://github.com/mundacho/scala-lsp-eclipse.git</tycho.scmUrl>
     </properties>

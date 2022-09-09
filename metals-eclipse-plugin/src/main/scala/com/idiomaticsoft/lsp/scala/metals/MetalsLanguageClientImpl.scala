@@ -27,7 +27,6 @@ import com.idiomaticsoft.lsp.scala.metals.operations.slowtask.MetalsSlowTaskPara
 import com.idiomaticsoft.lsp.scala.metals.operations.slowtask.MetalsSlowTaskResult
 import com.idiomaticsoft.lsp.scala.metals.operations.treeview.TreeViewDidChangeParams
 import scala.concurrent.Future
-import scala.concurrent.forkjoin._
 import scala.concurrent.ExecutionContext.Implicits.global
 import org.eclipse.lsp4j.ExecuteCommandParams
 import org.eclipse.swt.browser.Browser

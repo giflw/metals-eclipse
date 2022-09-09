@@ -30,6 +30,7 @@ import org.eclipse.swt.events.SelectionEvent
 import org.eclipse.jface.text.ITextOperationTarget
 import org.eclipse.jface.text.ITextViewer
 import org.eclipse.lsp4e.LSPEclipseUtils
+import org.eclipse.lsp4e.ui.UI
 import org.eclipse.swt.widgets.Control
 import org.eclipse.swt.custom.StyledText
 import org.eclipse.jface.viewers.LabelProvider
@@ -91,7 +92,7 @@ class MetalsTreeView extends ViewPart {
             val text =
               editorPart.getAdapter(classOf[Control]).asInstanceOf[StyledText]
             val offset = text.getCaretOffset()
-            val activeEditor = LSPEclipseUtils.getActiveTextEditor()
+            val activeEditor = UI.getActiveTextEditor()
             val document = activeEditor
               .getDocumentProvider()
               .getDocument(activeEditor.getEditorInput())

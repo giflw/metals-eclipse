@@ -16,10 +16,12 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <scala.version.base>2.12</scala.version.base>
+        <scala.version.base>2.13</scala.version.base>
         <scala.version>${scala.version.base}.8</scala.version>
         <coursier.version>2.1.0-M6-53-gb4f448130</coursier.version>
         <scala-xml.version>2.1.0</scala-xml.version>
+        <semanticdb.version>4.5.13</semanticdb.version>
+        <scala.maven.plugin.version>4.7.1</scala.maven.plugin.version>
     </properties>
 
     <dependencies>
@@ -56,9 +58,10 @@
             <plugin>
                 <groupId>net.alchim31.maven</groupId>
                 <artifactId>scala-maven-plugin</artifactId>
-                <version>4.7.1</version>
+                <version>${scala.maven.plugin.version}</version>
                 <executions>
                     <execution>
+                        <?m2e ignore?>
                         <goals>
                             <goal>add-source</goal>
                             <goal>compile</goal>
@@ -68,13 +71,13 @@
                 </executions>
                 <configuration>
                     <compilerPlugins>
-                        <compilerPlugin>
+                       <compilerPlugin>
                             <groupId>org.scalameta</groupId>
                             <artifactId>semanticdb-scalac_${scala.version}</artifactId>
-                            <version>4.3.12</version>
+                            <version>${semanticdb.version}</version>
                         </compilerPlugin>
                     </compilerPlugins>
-                    <scalaVersion>2.12.8</scalaVersion>
+                    <scalaVersion>${scala.version}</scalaVersion>
                     <args>
                         <arg>-P:semanticdb:synthetics:on</arg>
                         <arg>-P:semanticdb:failures:warning</arg>
@@ -104,19 +107,19 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>io.get-coursier</groupId>
-                                    <artifactId>coursier_2.12</artifactId>
+                                    <artifactId>coursier_${scala.version.base}</artifactId>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>io.get-coursier</groupId>
-                                    <artifactId>coursier-cache_2.12</artifactId>
+                                    <artifactId>coursier-cache_${scala.version.base}</artifactId>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>io.get-coursier</groupId>
-                                    <artifactId>coursier-core_2.12</artifactId>
+                                    <artifactId>coursier-core_${scala.version.base}</artifactId>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.scala-lang.modules</groupId>
-                                    <artifactId>scala-xml_2.12</artifactId>
+                                    <artifactId>scala-xml_${scala.version.base}</artifactId>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -124,46 +127,6 @@
                 </executions>
             </plugin>
         </plugins>
-
-
-        <pluginManagement>
-            <plugins>
-                <!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
-                <plugin>
-                    <groupId>org.eclipse.m2e</groupId>
-                    <artifactId>lifecycle-mapping</artifactId>
-                    <version>1.0.0</version>
-                    <configuration>
-                        <lifecycleMappingMetadata>
-                            <pluginExecutions>
-                                <pluginExecution>
-                                    <pluginExecutionFilter>
-                                        <groupId>
-											net.alchim31.maven
-										</groupId>
-                                        <artifactId>
-											scala-maven-plugin
-										</artifactId>
-                                        <versionRange>
-											[3.3.2,)
-										</versionRange>
-                                        <goals>
-                                            <goal>add-source</goal>
-                                            <goal>compile</goal>
-                                            <goal>testCompile</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
-                                    <action>
-                                        <ignore></ignore>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
     </build>
 
 </project>
