@@ -12,23 +12,12 @@
             <unit id="org.eclipse.jface.text.tests" version="0.0.0"/>
             <repository location="http://download.eclipse.org/eclipse/updates/4.24/"/>
         </location>
-        <!--<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-            <unit id="org.eclipse.lsp4e" version="0.0.0"/>
-            <unit id="org.eclipse.lsp4e.debug" version="0.0.0"/>
-            <repository location="http://download.eclipse.org/lsp4e/releases/latest/"/>
-        </location>-->
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
             <unit id="org.eclipse.mylyn.commons.notifications.feature.group" version="0.0.0"/>
             <repository location="http://download.eclipse.org/mylyn/releases/latest"/>
         </location>
-        <!--<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-            <unit id="org.eclipse.gmf.runtime.draw2d.ui.render.awt" version="0.0.0"/>
-            <repository location="http://download.eclipse.org/modeling/gmp/gmf-runtime/updates/releases/"/>
-        </location>-->
         <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
             <unit id="com.google.gson" version="0.0.0"/>
-
-            <!--<unit id="org.eclipse.gmf.feature.group" version="0.0.0"/>-->
 
             <unit id="org.eclipse.lsp4e" version="0.0.0"/>
             <unit id="org.eclipse.lsp4e.debug" version="0.0.0"/>

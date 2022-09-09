@@ -50,7 +50,7 @@ class MetalsLaunchConfigurationDelegate extends JavaLaunchDelegate {
       val fetch = Fetch()
         .addDependencies(
           Dependency(
-            mod"org.scalameta:metals_2.12",
+            mod"org.scalameta:metals_2.13",
             metalsVersion
           )
         )
