@@ -7,7 +7,7 @@
         <version>0.3.3-SNAPSHOT</version>
     </parent>
 
-    <artifactId>metals-eclipse-plugin</artifactId>
+    <artifactId>com.idiomaticsof.lsp.scala</artifactId>
     <packaging>eclipse-plugin</packaging>
 
     <name>Eclipse Scala LSP Plugin</name>
