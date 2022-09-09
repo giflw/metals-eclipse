@@ -9,9 +9,10 @@
     <url>https://github.com/scalameta/metals-eclipse</url>
 
     <properties>
-        <tycho-version>1.4.0</tycho-version>
-        <tycho-extras-version>${tycho-version}</tycho-extras-version>
+        <tycho.version>2.7.5</tycho.version>
+        <tycho.extras.version>${tycho.version}</tycho.extras.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- FIXME -->
         <tycho.scmUrl>scm:git:https://github.com/mundacho/scala-lsp-eclipse.git</tycho.scmUrl>
     </properties>
 
@@ -26,7 +27,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -34,15 +35,35 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>enforce-maven</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>3.8</version>
+                                </requireMavenVersion>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>tycho-maven-plugin</artifactId>
-                <version>${tycho-version}</version>
+                <version>${tycho.version}</version>
                 <extensions>true</extensions>
             </plugin>
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>target-platform-configuration</artifactId>
-                <version>${tycho-version}</version>
+                <version>${tycho.version}</version>
                 <configuration>
                     <includePackedArtifacts>true</includePackedArtifacts>
                     <target>
@@ -57,7 +78,7 @@
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>tycho-source-plugin</artifactId>
-                <version>${tycho-version}</version>
+                <version>${tycho.version}</version>
                 <executions>
                     <execution>
                         <id>plugin-source</id>
@@ -70,7 +91,7 @@
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>tycho-packaging-plugin</artifactId>
-                <version>${tycho-version}</version>
+                <version>${tycho.version}</version>
                 <configuration>
                     <sourceReferences>
                         <generate>true</generate>
@@ -83,19 +104,19 @@
                     <dependency>
                         <groupId>org.eclipse.tycho.extras</groupId>
                         <artifactId>tycho-buildtimestamp-jgit</artifactId>
-                        <version>${tycho-extras-version}</version>
+                        <version>${tycho.extras.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.eclipse.tycho.extras</groupId>
                         <artifactId>tycho-sourceref-jgit</artifactId>
-                        <version>${tycho-extras-version}</version>
+                        <version>${tycho.extras.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.eclipse.tycho</groupId>
                 <artifactId>tycho-p2-plugin</artifactId>
-                <version>${tycho-version}</version>
+                <version>${tycho.version}</version>
                 <configuration>
                     <baselineRepositories>
                         <repository>
@@ -107,7 +128,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.3</version>
+                <version>0.8.8</version>
                 <executions>
                     <execution>
                         <goals>
@@ -126,7 +147,7 @@
             <plugin>
                 <groupId>org.eclipse.tycho.extras</groupId>
                 <artifactId>tycho-p2-extras-plugin</artifactId>
-                <version>${tycho-version}</version>
+                <version>${tycho.version}</version>
                 <executions>
                     <!-- Make sure we don't forget to bump version -->
                     <execution>
@@ -229,7 +250,7 @@
                     <plugin>
                         <groupId>org.eclipse.tycho.extras</groupId>
                         <artifactId>tycho-pack200a-plugin</artifactId>
-                        <version>${tycho-extras-version}</version>
+                        <version>${tycho.extras.version}</version>
                         <executions>
                             <execution>
                                 <id>pack200-normalize</id>
@@ -257,7 +278,7 @@
                     <plugin>
                         <groupId>org.eclipse.tycho.extras</groupId>
                         <artifactId>tycho-pack200b-plugin</artifactId>
-                        <version>${tycho-extras-version}</version>
+                        <version>${tycho.extras.version}</version>
                         <executions>
                             <execution>
                                 <id>pack200-pack</id>
@@ -271,7 +292,7 @@
                     <plugin>
                         <groupId>org.eclipse.tycho</groupId>
                         <artifactId>tycho-p2-plugin</artifactId>
-                        <version>${tycho-extras-version}</version>
+                        <version>${tycho.extras.version}</version>
                         <executions>
                             <execution>
                                 <id>p2-metadata</id>
